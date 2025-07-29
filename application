@@ -1,0 +1,47 @@
+import React, {useState} from 'react'
+
+// State for household contact information
+    const [householdContactName, setHouseholdContactName] = useState('');
+    const [householdContactPhone, setHouseholdContactPhone] = useState(''); 
+    const [householdMembers, setHouseholdMembers] = useState('');
+function HouseholdForm() {
+    const [householdMembers, setHouseholdMembers] = useState([
+        { name: '', age: '', gender: '', weight: '', symptoms: '', allergies: '', currentMedications: '' }
+    ])}
+    const scenarioItems = useMemo(() => ({
+        'anthrax': [
+            { name: "Ciprofloxacin (Adult)", type: "drug" },
+            { name: "Doxycycline (Adult)", type: "drug" },
+            { name: "Anthrax Vaccine Adsorbed (AVA)", type: "vaccine" }
+        ],
+        'covid': [
+            { name: "COVID-19 Vaccine", type: "vaccine" },
+            { name: "Paxlovid (Antiviral)", type: "drug" },
+            { name: "Acetaminophen (Adult)", type: "drug" },
+            { name: "Acetaminophen (Pediatric)", type: "drug" },
+            { name: "Ibuprofen (Adult)", type: "drug" },
+            { name: "Ibuprofen (Pediatric)", type: "drug" },
+            { name: "Oral Rehydration Salts (ORS)", type: "drug" }
+        ],
+        'flu': [
+            { name: "Influenza Vaccine (Seasonal)", type: "vaccine" },
+            { name: "Oseltamivir (Tamiflu)", type: "drug" },
+            { name: "Acetaminophen (Adult)", type: "drug" },
+            { name: "Acetaminophen (Pediatric)", type: "drug" },
+            { name: "Ibuprofen (Adult)", type: "drug" },
+            { name: "Ibuprofen (Pediatric)", type: "drug" },
+            { name: "Oral Rehydration Salts (ORS)", type: "drug" }
+        ],
+        'plague': [
+            { name: "Gentamicin", type: "drug" },
+            { name: "Streptomycin", type: "drug" },
+            { name: "Ciprofloxacin (Adult)", type: "drug" },
+            { name: "Doxycycline (Adult)", type: "drug" }
+        ]
+    }), []);
+const [selectedScenario, setSelectedScenario] = useState('covid');
+    const [treatmentPlan, setTreatmentPlan] = useState('');
+    const [isLoading, setIsLoading] = useState(false);
+    const [error, setError] = useState('');
+    const [validationErrors, setValidationErrors] = useState([]);    
+    
